@@ -1,0 +1,54 @@
+print('привет! выбери героя:')
+print('1. рыцарь')
+print('2. лучник')
+print('3. стрелец')
+
+vibor_geroya = input('введи цифру: ')
+
+if vibor_geroya == '1':
+    print('герой: рыцарь')
+elif vibor_geroya == '2':
+    print('герой: лучник')
+else:
+    print('герой: стрелец')
+
+print('выбери локацию:')
+print('1. замок с драконом (250 хп)')
+print('2. лес с гномами (150 хп)')
+print('3. озеро с кракеном (200 хп)')
+print('4. пустыня с гигантским скорпионом (300 хп)')
+
+vibor_lokacii = input('введи цифру: ')
+
+if vibor_lokacii == '1':
+    print('локация: замок с драконом')
+elif vibor_lokacii == '2':
+    print('локация: лес с гномами')
+elif vibor_lokacii == '3':
+    print('локация: озеро с кракеном')
+else:
+    print('локация: пустыня с гигантским скорпионом')
+
+print('битва началась!')
+
+igrok_zdorovye = 100
+bos_zdorovye = int(vibor_lokacii) * 75 + 75  
+
+while igrok_zdorovye > 0 and bos_zdorovye > 0:
+    deistvie = input('что будешь делать? (атака/уклонение): ')
+
+    if deistvie == 'атака':
+        igrok_zdorovye -= 10
+        bos_zdorovye -= 40
+        print('ты атаковал!')
+    elif deistvie == 'уклонение':
+        igrok_zdorovye -= 1
+        bos_zdorovye -= 10
+        print('ты уклонился!')
+    else:
+        print('неверная команда.')
+
+if bos_zdorovye <= 0:
+    print('ты победил!')
+else:
+    print('ты проиграл...')
